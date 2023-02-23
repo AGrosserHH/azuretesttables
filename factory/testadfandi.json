@@ -1,0 +1,9 @@
+{
+	"name": "testadfandi",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "eadd0a14-b175-449d-ad86-e10c2ca03c5d",
+		"tenantId": "d4b8e021-3ccc-48db-9724-b0952fca78d4"
+	}
+}
