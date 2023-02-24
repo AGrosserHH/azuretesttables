@@ -30,11 +30,8 @@
 				}
 			],
 			"scriptLines": [
-				"source(output(",
-				"          {country;currency;value} as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"source(allowSchemaDrift: false,",
+				"     validateSchema: true,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 aggregate(groupBy({country;currency;value}),",
 				"     count = count('1')) ~> aggregate1",
