@@ -21,14 +21,7 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [
-				{
-					"name": "aggregate1"
-				},
-				{
-					"name": "select1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          country as string,",
@@ -38,15 +31,7 @@
 				"     allowSchemaDrift: false,",
 				"     validateSchema: true,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 aggregate(groupBy({country;currency;value}),",
-				"     count = count('1')) ~> aggregate1",
-				"aggregate1 select(mapColumn(",
-				"          {country;currency;value},",
-				"          count",
-				"     ),",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
+				"source1 sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",
